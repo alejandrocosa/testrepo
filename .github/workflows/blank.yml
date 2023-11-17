@@ -17,5 +17,5 @@ jobs:
           script: |
             const query = `query { organization(login: \"aequitas-aod\") { projectsV2(first: 100) { nodes { id title url repositories(first: 100){ nodes { id name }}}}}}`;
             const result = await github.graphql(query);
-            console.log(result.organization.projects.nodes);
+            console.log(result.organization.projectsV2.nodes);
           github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
